@@ -34,7 +34,7 @@ namespace Radix.Utils.Wpf
         /// Raises the <see cref="PropertyChanging"/> event.
         /// </summary>
         /// <param name="propertyName">The name of the property that is about to change.</param>
-        internal void OnPropertyChanging(string propertyName)
+        protected void OnPropertyChanging(string propertyName)
         {
             this.BeforePropertyChanging(propertyName);
             this.PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
@@ -58,7 +58,7 @@ namespace Radix.Utils.Wpf
         /// Raises the <see cref="PropertyChanged"/> event.
         /// </summary>
         /// <param name="propertyName">The name of the property that has changed.</param>
-        internal void OnPropertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
             this.AfterPropertyChanged(propertyName);
@@ -97,7 +97,7 @@ namespace Radix.Utils.Wpf
         /// <value>
         ///   <c>true</c> if this instance is disposed; otherwise, <c>false</c>.
         /// </value>
-        internal bool IsDisposed { get; private set; }
+        public bool IsDisposed { get; private set; }
 
         /// <summary>
         /// Releases unmanaged and - optionally - managed resources.

@@ -9,6 +9,7 @@
     <Grid>
         <Button Content="AppCursor (1.sec)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="116" Height="24" Click="Button_Click" />
         <Button Content="AppCursor (nested)" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="116" Height="24" Click="Button_Click_1" />
+        <Button Content="ExceptionWindow" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" Width="116" Height="24" Click="Button_Click_2" />
 
     </Grid>
 </Window>

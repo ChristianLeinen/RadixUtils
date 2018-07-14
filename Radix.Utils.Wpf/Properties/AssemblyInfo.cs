@@ -1,11 +1,10 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Radix.Utils.Wpf")]
+[assembly: AssemblyTitle("radix utility class library")]
 [assembly: AssemblyDescription("WPF component of the radix utility class library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("radix IT-Consulting & Engineering")]

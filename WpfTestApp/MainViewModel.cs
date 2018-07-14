@@ -8,6 +8,19 @@ namespace WpfTestApp
 {
     class MainViewModel : BaseViewModel
     {
+        public Command AboutBoxCommand { get; private set; }
+        public MainViewModel()
+        {
+            this.AboutBoxCommand = new Command((unused) => this.ShowAboutBox());
+            // tell ui to re-check for execution
+            this.AboutBoxCommand.OnCanExecuteChanged();
+        }
+
+        private void ShowAboutBox()
+        {
+            throw new NotImplementedException();
+        }
+
         public void DoIt()
         {
 

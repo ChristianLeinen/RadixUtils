@@ -45,7 +45,7 @@ namespace Radix.Utils.Wpf
         /// <summary>
         /// Raises the <see cref="CanExecuteChanged"/> event.
         /// </summary>
-        internal void OnCanExecuteChanged() => this.CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+        public void OnCanExecuteChanged() => this.CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 
         /// <summary>
         /// Defines the method to be called when the command is invoked.
