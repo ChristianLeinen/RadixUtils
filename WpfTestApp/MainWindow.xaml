@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTestApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="AppCursor (1.sec)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="116" Height="24" Click="Button_Click" />
+        <Button Content="AppCursor (nested)" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="116" Height="24" Click="Button_Click_1" />
+
+    </Grid>
+</Window>

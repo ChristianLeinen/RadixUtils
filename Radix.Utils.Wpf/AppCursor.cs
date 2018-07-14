@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace Radix.Utils.Wpf
 {
@@ -77,12 +78,15 @@ namespace Radix.Utils.Wpf
                 return;
             else if (disposing)
             {
-                if (this.DelayResetUntilIdle)
+                if (this.PreviousCursor == Mouse.OverrideCursor)
+                {
+                    Debug.WriteLine($"AppCursor::Dispose: skipping reset of cursor; it's identical to the previous one.");
+                }
+                else if (this.DelayResetUntilIdle)
                 {
                     Debug.WriteLine($"AppCursor::Dispose: resetting cursor to null on ApplicationIdle.");
-                    Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.ApplicationIdle,
+                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle,
                         new Action(() => AppCursor.ResetCursor()));
-
                 }
                 else
                 {
@@ -98,7 +102,7 @@ namespace Radix.Utils.Wpf
         /// </summary>
         public static void ResetCursor()
         {
-            // may get called multiple times in a row, don't thash tracer
+            // may get called multiple times in a row, don't trash tracer
             if (Mouse.OverrideCursor != null)
             {
                 Debug.WriteLine($"AppCursor::ResetCursor: resetting cursor to null.");
